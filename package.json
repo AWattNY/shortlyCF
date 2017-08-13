@@ -8,7 +8,7 @@
   "description": "url shortner",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "author": "adam watt",
   "license": "MIT",
