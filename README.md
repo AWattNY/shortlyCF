@@ -120,7 +120,7 @@ Server reply should be
 ```
 Found. Redirecting to http://www.google.com
 ```
-For testing purpusoes this get request also accepts a testDate query parameter
+For testing purpusoes this get request also accepts a testDate query parameter<br />
 for example to simulate short url use an hour later
 ```
 curl http://localhost:4000/SkzUYhgOW?testDate=2017-08-15T19:15:46.778Z
