@@ -28,19 +28,16 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirectiong
 * **Method:**
   `GET`
 *  **URL Params**
-
-   **Optional:**
+  **Optional:**
     `testDate=[date]`
 * **Success Response:**
-
   * **Code:** 302 <br />
     **Result:** Found. Redirecting to appropriate Long Url
- 
 * **Sample Call:**
   See Curl section below for examples
 
 ### Request Stats
-  Returns Statats as per request params.
+  Returns Stats as per request params.
 * **URL**
   /stats/:slug/:statsParam
 * **Method:**
@@ -48,13 +45,12 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirectiong
 *  **URL Params** <br />
    **Required:** 
     `slug=[Alphanumeric ShortId]`<br />
+    `statsParam=[allTime, pastWeek or last24]`<br />
    **Optional:**
     `testDate=[date]`
 * **Success Response:**
-
   * **Code:** 200 <br />
     **Content:** `{"statsQuery":"pastWeek","results":8}`
- 
 * **Sample Call:**
   See Curl section below for examples
 
