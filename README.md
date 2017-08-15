@@ -61,8 +61,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-
-
 ```
 Node
 MongoDB
@@ -90,21 +88,21 @@ $ npm start
 
 ## Running the tests
 
-To run automated Mocha tests, open a seperate tab and run 
+To run the automated Mocha/Supertest tests suite, open a seperate tab and run 
 ```
 $ npm test
 ```
-## Testing API using curl
+## Testing API using Curl
 
 Create Short Url
 ```
 $ curl -i -d "url=www.google.com" http://localhost:4000/api/shorten
 ```
-Server will reply with the following JSON Object
+Server will reply with a JSON Object
 ```
 {"shortenedURL":"http://localhost:4000/r1JOuhlu-"}
 ```
-Trying the same long url twice returns a different short url
+Trying the same long Url twice returns a different short Url
 ```
 $ curl -i -d "url=www.google.com" http://localhost:4000/api/shorten
 ```
@@ -120,21 +118,21 @@ Server reply
 ```
 Found. Redirecting to http://www.google.com
 ```
-For testing purpusoes this get request also accepts a testDate query parameter<br />
-For example to simulate the use of a short url an hour later
+For testing purposes this get request also accepts a testDate query parameter<br />
+For example to simulate the use of a short Url an hour later
 ```
 curl http://localhost:4000/SkzUYhgOW?testDate=2017-08-15T19:15:46.778Z
 ```
-Requesting short url Access Stats from API:
-Last 24 hours
+Requesting short Url Access Stats from API:
+Last 24 hours Stats
 ```
 $ curl http://localhost:4000/stats/SkzUYhgOW/last24
 ```
-Past Week
+Past Week Stats
 ```
 $ curl http://localhost:4000/stats/SkzUYhgOW/pastWeek
 ```
-All Time
+All Time Stats
 ```
 $ curl http://localhost:4000/stats/SkzUYhgOW/allTime
 ```
