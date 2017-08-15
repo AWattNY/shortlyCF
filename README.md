@@ -158,6 +158,7 @@ $ curl http://localhost:4000/stats/SkzUYhgOW/last24?testDate=2017-08-17T18:00:02
 <li>4 - Test redirecting time is under 10ms.</li>
 <li>5 - Expand Test Coverage </li>
 </ol>
+
 ## Author
 Adam Watt
 
