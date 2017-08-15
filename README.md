@@ -46,8 +46,8 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirectiong
 * **Method:**
   `GET`
 *  **URL Params** <br />
-   **Required:** <br />
-    `slug=[Alphanumeric ShortId]`
+   **Required:** 
+    `slug=[Alphanumeric ShortId]`<br />
    **Optional:**
     `testDate=[date]`
 * **Success Response:**
