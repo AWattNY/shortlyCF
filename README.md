@@ -45,8 +45,8 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirectiong
   /stats/:slug/:statsParam
 * **Method:**
   `GET`
-*  **URL Params**
-   **Required:**
+*  **URL Params** <br />
+   **Required:** <br />
     `slug=[Alphanumeric ShortId]`
    **Optional:**
     `testDate=[date]`
