@@ -285,9 +285,6 @@ describe('url shortning project unit tests 2 - testing stats', function() {
   });
 
   after(function() {
-    // mongoose.connect('mongodb://' + config.db.host + '/' + config.db.name, function() {
-    //   mongoose.connection.db.dropDatabase();
-    // });
     Url.collection.drop();
   });
 
