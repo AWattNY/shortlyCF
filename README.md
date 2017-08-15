@@ -9,7 +9,7 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirectiong
   /api/shorten
 * **Method:**
   `POST`
-*  **URL Params**
+*  **Data Params**
 
    **Required:**
     `url=some Long url`
