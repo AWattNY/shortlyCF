@@ -28,7 +28,7 @@ git clone https://github.com/AWattNY/shortlyCF.git
 ```
 3 - install package
 ```
-$ npm install
+$ npm install 
 ```
 3 - Run
 ```
@@ -46,6 +46,10 @@ $ npm test
 Explain how to run the automated tests for this system
 
 ## Built With
+Express [link](https://expressjs.com/)
+shortid
+Mocha
+Supertest
 
 
 ## Author
