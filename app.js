@@ -40,7 +40,56 @@ app.post('/api/shorten', function(req, res) {
   
 });
 
+app.get('/:slug', function(req, res) {
+  let short = req.params.slug;
+  let currentDate;
+  const msToDays = 1000 * 60 * 60 * 24;
+  console.log('short: ', short);
+  Url.findOne({short}, function (err, doc) {
+    if (doc) {
+      res.redirect(302, 'http://' + doc.long);
+      console.log(req.query.testDate);
+      if ( !req.query.testDate ) {
+        currentDate = new Date();
+        console.log(currentDate);
+      } else {
+        currentDate = new Date(req.query.testDate);
 
+      }
+      doc.allTime++;
+      let length = doc.lastSeven.length;
+      if ( length === 0 ) { 
+        doc.lastSeven.push({ count: 1, date: currentDate});
+      } else {
+        
+        length = doc.lastSeven.length;
+        let lastDay = doc.lastSeven[length - 1];
+        let lastDate = new Date(lastDay.date);
+        let diff = ( currentDate - lastDate ) / msToDays;
+        if ( diff > 1 ) {
+          doc.lastSeven.push({ count: 1, date: currentDate});
+        } else {
+          console.log('i was here');
+          lastDay.count++;
+        }
+        length = doc.lastSeven.length;
+        if ( length > 7 ) {
+          doc.lastSeven.shift();	
+        } 
+      } 
+
+      doc.save(function(err) {
+        if (err) {
+          console.log(err);
+        }
+      });
+      
+    } else {
+      res.redirect(config.host);
+    }
+  });
+  
+});
 
 
 
