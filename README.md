@@ -41,10 +41,16 @@ Open a seperate tab and run
 ```
 $ npm test
 ```
-## Running the tests
+## testing API using curl
 
-Explain how to run the automated tests for this system
-
+Create Short Url
+```
+$ curl -i -d "url=www.google.com" http://localhost:4000/api/shorten
+```
+Server will reply with the following JSON object
+```
+{"shortenedURL":"http://localhost:4000/r1JOuhlu-"}
+```
 ## Built With
 [ExpressJS](https://expressjs.com/)<br />
 [Shortid](https://www.npmjs.com/package/supertest)<br />
