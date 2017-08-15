@@ -4,7 +4,7 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirecting 
 For short URL creation we will use the [shortid](https://www.npmjs.com/package/shortid) npm module which creates short non-sequential (therfore not predictable) URL-friendly unique IDs. This package can generate any number of IDs without duplicates, even millions per day. For this use case, data persistence will require a high performance NoSQL database. While I will be using MongoDB for this implementation, for improved performance at scale Redis is definitely a good option as well. 
 
 ## API Description
-### Shorten Url
+### Shorten URL
   Returns JSON Data with shortened url.
 * **URL**
   /api/shorten
@@ -22,7 +22,7 @@ For short URL creation we will use the [shortid](https://www.npmjs.com/package/s
 * **Sample Call:**
   See Curl section below
   
-### Use Short Url
+### Use Short URL
   Redirects user to appropriate Long Url.
 * **URL**
   /:slug
@@ -96,7 +96,7 @@ $ npm test
 ```
 ## Testing API using Curl
 
-Create Short Url
+Create Short URL
 ```
 $ curl -i -d "url=www.google.com" http://localhost:4000/api/shorten
 ```
@@ -104,15 +104,15 @@ Server will reply with a JSON Object
 ```
 {"shortenedURL":"http://localhost:4000/r1JOuhlu-"}
 ```
-Trying the same long Url twice returns a different short Url
+Trying the same long URL twice returns a different short URL
 ```
 $ curl -i -d "url=www.google.com" http://localhost:4000/api/shorten
 ```
-Server will reply with a different short url
+Server will reply with a different short URL
 ```
 {"shortenedURL":"http://localhost:4000/SkzUYhgOW"}
 ```
-To use a Short Url
+To use a Short URL
 ```
 $ curl http://localhost:4000/SkzUYhgOW
 ```
@@ -121,11 +121,11 @@ Server reply
 Found. Redirecting to http://www.google.com
 ```
 For testing purposes this get request also accepts a testDate query parameter<br />
-For example to simulate the use of a short Url an hour later
+For example to simulate the use of a short URL an hour later
 ```
 curl http://localhost:4000/SkzUYhgOW?testDate=2017-08-15T19:15:46.778Z
 ```
-Requesting short Url Access Stats from API:
+Requesting short URL Access Stats from API:
 Last 24 hours Stats
 ```
 $ curl http://localhost:4000/stats/SkzUYhgOW/last24
@@ -138,7 +138,7 @@ All Time Stats
 ```
 $ curl http://localhost:4000/stats/SkzUYhgOW/allTime
 ```
-For testing purpusoes the stats route also accepts a testDate query parameter
+For testing purposes the stats route also accepts a testDate query parameter
 ```
 $ curl http://localhost:4000/stats/SkzUYhgOW/last24?testDate=2017-08-17T18:00:02.534Z
 ```
