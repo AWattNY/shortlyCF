@@ -2,6 +2,30 @@
 
 A HTTP-based RESTful API for generating and managing Short URLs and redirectiong clients.
 
+## API Description
+### Shorten Url
+  Returns json data with shortened url.
+* **URL**
+  /api/shorten
+* **Method:**
+  `POST`
+*  **URL Params**
+
+   **Required:**
+    `url=some Long url`
+* **Success Response:**
+
+  * **Code:** 200 <br />
+    **Content:** `{"shortenedURL":"http://localhost:4000/r1JOuhlu-"}`
+ 
+* **Sample Call:**
+  See Curl section below
+  
+### Use Short Url
+
+### Request Stats
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -41,7 +65,7 @@ Open a seperate tab and run
 ```
 $ npm test
 ```
-## testing API using curl
+## Testing API using curl
 
 Create Short Url
 ```
