@@ -44,24 +44,21 @@ app.get('/:slug', function(req, res) {
   let short = req.params.slug;
   let currentDate;
   const msToDays = 1000 * 60 * 60 * 24;
-  console.log('short: ', short);
   Url.findOne({short}, function (err, doc) {
     if (doc) {
       res.redirect(302, 'http://' + doc.long);
-      console.log(req.query.testDate);
+
       if ( !req.query.testDate ) {
         currentDate = new Date();
-        console.log(currentDate);
       } else {
         currentDate = new Date(req.query.testDate);
-
       }
+
       doc.allTime++;
       let length = doc.lastSeven.length;
       if ( length === 0 ) { 
         doc.lastSeven.push({ count: 1, date: currentDate});
       } else {
-        
         length = doc.lastSeven.length;
         let lastDay = doc.lastSeven[length - 1];
         let lastDate = new Date(lastDay.date);
@@ -69,7 +66,6 @@ app.get('/:slug', function(req, res) {
         if ( diff > 1 ) {
           doc.lastSeven.push({ count: 1, date: currentDate});
         } else {
-          console.log('i was here');
           lastDay.count++;
         }
         length = doc.lastSeven.length;
@@ -88,7 +84,6 @@ app.get('/:slug', function(req, res) {
       res.redirect(config.host);
     }
   });
-  
 });
 
 app.get('/stats/:slug/:statsParam', function(req, res) {
@@ -101,6 +96,7 @@ app.get('/stats/:slug/:statsParam', function(req, res) {
   
   Url.findOne({short}, function (err, doc) {
     if (doc) {
+
       if ( !req.query.testDate ) {
         currentDate = new Date();
       } else {
