@@ -4,7 +4,7 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirectiong
 
 ## API Description
 ### Shorten Url
-  Returns json data with shortened url.
+  Returns JSON Data with shortened url.
 * **URL**
   /api/shorten
 * **Method:**
@@ -22,9 +22,41 @@ A HTTP-based RESTful API for generating and managing Short URLs and redirectiong
   See Curl section below
   
 ### Use Short Url
+  Redirects user to appropriate Long Url.
+* **URL**
+  /:shortId
+* **Method:**
+  `GET`
+*  **URL Params**
+
+   **Optional:**
+    `testDate=[date]`
+* **Success Response:**
+
+  * **Code:** 302 <br />
+    **Result:** Found. Redirecting to appropriate Long Url
+ 
+* **Sample Call:**
+  See Curl section below for examples
 
 ### Request Stats
+  Returns Statats as per request params.
+* **URL**
+  /stats/:slug/:statsParam
+* **Method:**
+  `GET`
+*  **URL Params**
+   **Required:**
+    `slug=[Alphanumeric ShortId]`
+   **Optional:**
+    `testDate=[date]`
+* **Success Response:**
 
+  * **Code:** 200 <br />
+    **Content:** `{"statsQuery":"pastWeek","results":8}`
+ 
+* **Sample Call:**
+  See Curl section below for examples
 
 ## Getting Started
 
