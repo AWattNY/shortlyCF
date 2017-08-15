@@ -1,6 +1,7 @@
 # URL SHORTNER
 
 A HTTP-based RESTful API for generating and managing Short URLs and redirectiong clients.
+For short url creation we will use the [shortid](https://www.npmjs.com/package/shortid) npm module which creates short non-sequential(therfore not predictable) url-friendly unique ids. This package can generate any number of ids without duplicates, even millions per day.For this use case, data persistance will require a high performance NoSQL database. For this implementation I will be using MongoDB. But For improved performance at scale using Redis is definitely a good option as well. 
 
 ## API Description
 ### Shorten Url
