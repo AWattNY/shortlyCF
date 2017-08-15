@@ -47,10 +47,49 @@ Create Short Url
 ```
 $ curl -i -d "url=www.google.com" http://localhost:4000/api/shorten
 ```
-Server will reply with the following JSON object
+Server will reply with the following JSON Object
 ```
 {"shortenedURL":"http://localhost:4000/r1JOuhlu-"}
 ```
+Trying the same long url twice returns a different short url
+```
+$ curl -i -d "url=www.google.com" http://localhost:4000/api/shorten
+```
+Server will reply with a different short url
+```
+{"shortenedURL":"http://localhost:4000/SkzUYhgOW"}
+```
+To use a Short Url
+```
+$ curl http://localhost:4000/SkzUYhgOW
+```
+Server reply should be 
+```
+Found. Redirecting to http://www.google.com
+```
+For testing purpusoes this get request also accepts a testDate query parameter
+for example to simulate short url use an hour later
+```
+curl http://localhost:4000/SkzUYhgOW?testDate=2017-08-15T19:15:46.778Z
+```
+Requesting short url Access Stats from API:
+Last 24 hours
+```
+$ curl http://localhost:4000/stats/SkzUYhgOW/last24
+```
+Past Week
+```
+$ curl http://localhost:4000/stats/SkzUYhgOW/pastWeek
+```
+All Time
+```
+$ curl http://localhost:4000/stats/SkzUYhgOW/allTime
+```
+For testing purpusoes the stats route also accepts a testDate query parameter
+```
+$ curl http://localhost:4000/stats/SkzUYhgOW/last24?testDate=2017-08-17T18:00:02.534Z
+```
+
 ## Built With
 [ExpressJS](https://expressjs.com/)<br />
 [Shortid](https://www.npmjs.com/package/supertest)<br />
