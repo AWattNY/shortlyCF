@@ -44,10 +44,10 @@ For short URL creation we will use the [shortid](https://www.npmjs.com/package/s
 * **Method:**
   `GET`
 *  **URL Params** <br />
-   **Required:** 
+   **Required:** <br />
     `slug=[Alphanumeric ShortId]`<br />
     `statsParam=[allTime, pastWeek or last24]`<br />
-   **Optional:**
+   **Optional:** <br />
     `testDate=[date]`
 * **Success Response:**
   * **Code:** 200 <br />
