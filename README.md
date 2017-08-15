@@ -93,7 +93,7 @@ $ node app.js
 
 ## Running the tests
 
-Open a seperate tab and run 
+To run automated Mocha tests, open a seperate tab and run 
 ```
 $ npm test
 ```
