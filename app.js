@@ -21,5 +21,27 @@ app.get('/', function(req, res) {
   res.send('Welcome to Shortly');
 });
 
+app.post('/api/shorten', function(req, res) {
+  let url = req.body.url;
+  let newSlug = slug.generate();
+
+  var newUrl = Url({
+    long: url,
+    short: newSlug
+  });
+
+  newUrl.save(function(err) {
+    if (err) {
+      console.log(err);
+    }
+  });
+    
+  res.send({ shortenedURL: `http://localhost:4000/${newSlug}` });
+  
+});
+
+
+
+
 
 app.listen(process.env.PORT || 4000);
