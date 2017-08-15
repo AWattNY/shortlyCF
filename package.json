@@ -8,6 +8,7 @@
   "description": "url shortner",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "mocha"
   },
   "author": "adam watt",
