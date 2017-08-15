@@ -29,10 +29,10 @@ For short URL creation we will use the [shortid](https://www.npmjs.com/package/s
 * **Method:**
   `GET`
 *  **URL Params** <br />
-  **Required:** <br />
+  **Required:** 
     `slug=[some Short Id]` <br />
-  **Optional:** <br />
-    `testDate=[date]`
+  **Optional:** 
+    `testDate=[date]` <br />
 * **Success Response:**
   * **Code:** 302 <br />
     **Result:** Found. Redirecting to appropriate Long Url
