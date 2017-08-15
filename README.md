@@ -75,17 +75,17 @@ MongoDB
 brew update
 brew install mongodb
 ```
-2 - Fork and clone repo
+2 - Fork and Clone this repo
 ```
 git clone https://github.com/AWattNY/shortlyCF.git
 ```
-3 - install package
+3 - Install Project Dependencies
 ```
 $ npm install 
 ```
 3 - Run
 ```
-$ node app.js
+$ npm start
 ```
 
 ## Running the tests
@@ -116,7 +116,7 @@ To use a Short Url
 ```
 $ curl http://localhost:4000/SkzUYhgOW
 ```
-Server reply should be 
+Server reply 
 ```
 Found. Redirecting to http://www.google.com
 ```
@@ -149,7 +149,15 @@ $ curl http://localhost:4000/stats/SkzUYhgOW/last24?testDate=2017-08-17T18:00:02
 [MochaJS](https://mochajs.org/)<br />
 [Supertest](https://www.npmjs.com/package/supertest)
 
-
+## To Do List
+<ol>
+<li>1 - Implement Continuous Integration using Travis.</li>
+<li>2 - Implement Data Persistance with Redis.</li>
+<li>3 - Dockerize and deploy App.</li>
+<li>3 - Test App under High Traffic Load Conditions .</li>
+<li>4 - Test redirecting time is under 10ms.</li>
+<li>5 - Expand Test Coverage </li>
+</ol>
 ## Author
 Adam Watt
 
