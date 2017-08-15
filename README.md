@@ -25,11 +25,13 @@ For short URL creation we will use the [shortid](https://www.npmjs.com/package/s
 ### Use Short Url
   Redirects user to appropriate Long Url.
 * **URL**
-  /:shortId
+  /:slug
 * **Method:**
   `GET`
-*  **URL Params**
-  **Optional:**
+*  **URL Params** <br />
+  **Required:** <br />
+    `slug=[some Short Id]` <br />
+  **Optional:** <br />
     `testDate=[date]`
 * **Success Response:**
   * **Code:** 302 <br />
