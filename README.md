@@ -20,7 +20,7 @@ For short URL creation we will use the [shortid](https://www.npmjs.com/package/s
     **Content:** `{"shortenedURL":"http://localhost:4000/r1JOuhlu-"}`
  
 * **Sample Call:**
-  See Curl section below
+  See cURL section below
   
 ### Use Short URL
   Redirects user to appropriate Long Url.
@@ -37,7 +37,7 @@ For short URL creation we will use the [shortid](https://www.npmjs.com/package/s
   * **Code:** 302 <br />
     **Result:** Found. Redirecting to appropriate Long Url
 * **Sample Call:**
-  See Curl section below for examples
+  See cURL section below for examples
 
 ### Request Stats
   Returns Stats as per request params.
@@ -55,7 +55,7 @@ For short URL creation we will use the [shortid](https://www.npmjs.com/package/s
   * **Code:** 200 <br />
     **Content:** `{"statsQuery":"pastWeek","results":8}`
 * **Sample Call:**
-  See Curl section below for examples
+  See cURL section below for examples
 
 ## Getting Started
 
@@ -94,7 +94,7 @@ To run the automated Mocha/Supertest tests suite, open a seperate tab and run
 ```
 $ npm test
 ```
-## Testing API using Curl
+## Testing API using cURL
 
 Create Short URL
 ```
