@@ -152,7 +152,7 @@ $ curl http://localhost:4000/stats/SkzUYhgOW/last24?testDate=2017-08-17T18:00:02
 ## To Do List
 <ol>
 <li> Implement Continuous Integration using Travis.</li>
-<li> Implement Data Persistence with Redis.</li>
+<li> Implement Data Caching with Redis.</li>
 <li> Dockerize and deploy App.</li>
 <li> Test App under High Traffic Load Conditions .</li>
 <li> Test redirecting time is under 10ms.</li>
