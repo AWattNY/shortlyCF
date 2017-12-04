@@ -1,7 +1,7 @@
 # URL SHORTENER
 
 A HTTP-based RESTful API for generating and managing Short URLs and redirecting clients with Basic Analytics.
-For short URL creation we will use the [shortid](https://www.npmjs.com/package/shortid) npm module which creates short non-sequential (therfore not predictable) URL-friendly unique IDs. This package can generate any number of IDs without duplicates, even millions per day. For this use case, data persistence will require a high performance NoSQL database. While I will be using MongoDB for this implementation, for improved performance at scale Redis is definitely a good option as well. 
+For short URL creation we will use the [shortid](https://www.npmjs.com/package/shortid) npm module which creates short non-sequential (therfore not predictable) URL-friendly unique IDs. This package can generate any number of IDs without duplicates, even millions per day. For this use case, data being non-relational, persistence will require a high performance NoSQL database. While I will be using MongoDB for this implementation, for improved performance at scale Redis is definitely a good option for caching. 
 
 ## API Description
 ### Shorten URL
@@ -152,7 +152,7 @@ $ curl http://localhost:4000/stats/SkzUYhgOW/last24?testDate=2017-08-17T18:00:02
 ## To Do List
 <ol>
 <li> Implement Continuous Integration using Travis.</li>
-<li> Implement Data Persistence with Redis.</li>
+<li> Implement Data Caching with Redis.</li>
 <li> Dockerize and deploy App.</li>
 <li> Test App under High Traffic Load Conditions .</li>
 <li> Test redirecting time is under 10ms.</li>
